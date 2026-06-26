@@ -31,12 +31,12 @@ export function Testimonials() {
   ];
 
   return (
-    <section className="py-28 bg-[#171717]">
+    <section className="py-28 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <FadeUp className="mb-14">
           <SectionLabel>Client Stories</SectionLabel>
           <h2
-            className="font-bold text-white leading-[1.08]"
+            className="font-bold text-gray-900 leading-[1.08]"
             style={{ fontFamily: "Sora, sans-serif", fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
           >
             What Clients
@@ -48,16 +48,16 @@ export function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {items.map(({ quote, name, role, rating }, i) => (
             <FadeUp key={name} delay={i * 0.09}>
-              <div className="group bg-[#0B0B0B] border border-white/5 hover:border-[#E31C25]/20 p-8 transition-all duration-500 h-full">
+              <div className="group bg-gray-50 border border-gray-200 hover:border-[#E31C25]/30 p-8 transition-all duration-500 h-full">
                 <div className="text-[#E31C25]/25 font-bold mb-5 leading-none select-none" style={{ fontSize: "3.5rem" }}>"</div>
-                <p className="text-white/65 text-sm leading-relaxed mb-8 italic">"{quote}"</p>
+                <p className="text-gray-700 text-sm leading-relaxed mb-8 italic">"{quote}"</p>
                 <div className="flex items-center justify-between">
                   <div>
                     <div
-                      className="text-white font-semibold text-sm"
+                      className="text-gray-900 font-semibold text-sm"
                       style={{ fontFamily: "Sora, sans-serif" }}
                     >{name}</div>
-                    <div className="text-white/35 text-[11px] mt-0.5">{role}</div>
+                    <div className="text-gray-500 text-[11px] mt-0.5">{role}</div>
                   </div>
                   <div className="flex gap-1">
                     {Array.from({ length: rating }).map((_, j) => (

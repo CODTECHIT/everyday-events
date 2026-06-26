@@ -14,19 +14,8 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative h-screen min-h-[700px] flex items-center overflow-hidden bg-black">
-      {/* Parallax background */}
-      <div className="absolute inset-0" style={{ transform: `translateY(${scrollY * 0.22}px)` }}>
-        <img
-          src={IMG.hero}
-          alt="Large-scale concert event with dramatic stage lighting and crowd"
-          className="w-full h-[120%] object-cover object-center opacity-45"
-        />
-      </div>
-
-      {/* Layered overlays */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-black/20" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-transparent to-black/40" />
+    <section className="relative h-screen min-h-[700px] flex items-center overflow-hidden bg-white">
+      {/* No background image */}
 
       {/* Red hairline */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#E31C25]/50 to-transparent" />
@@ -49,7 +38,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 55 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.05, delay: 0.65, ease: [0.22, 0.61, 0.36, 1] }}
-          className="font-bold leading-[1.02] max-w-5xl text-white"
+          className="font-bold leading-[1.02] max-w-5xl text-gray-900"
           style={{ fontFamily: "Sora, sans-serif", fontSize: "clamp(2.8rem, 8vw, 96px)" }}
         >
           Creating{" "}
@@ -57,14 +46,14 @@ export function Hero() {
           <br />
           Events That Leave
           <br />
-          <span className="text-white/65">Lasting Impressions</span>
+          <span className="text-gray-900/65">Lasting Impressions</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.9, delay: 1.05 }}
-          className="text-white/40 text-[11px] tracking-[0.22em] uppercase mt-8 mb-11"
+          className="text-gray-600 text-[11px] tracking-[0.22em] uppercase mt-8 mb-11"
         >
           Professional Event Production&nbsp;•&nbsp;Weddings&nbsp;•&nbsp;Corporate Events&nbsp;•&nbsp;Concerts&nbsp;•&nbsp;Exhibitions
         </motion.p>
@@ -84,7 +73,7 @@ export function Hero() {
           </a>
           <a
             href="#portfolio"
-            className="group border border-white/20 text-white px-9 py-4 text-[11px] font-medium tracking-[0.18em] uppercase flex items-center gap-3 hover:border-[#E31C25]/50 hover:text-[#E31C25] transition-all duration-500 backdrop-blur-sm bg-white/5"
+            className="group border border-gray-300 text-gray-800 px-9 py-4 text-[11px] font-medium tracking-[0.18em] uppercase flex items-center gap-3 hover:border-[#E31C25]/50 hover:text-[#E31C25] transition-all duration-500 backdrop-blur-sm bg-white/40"
           >
             <Play size={11} fill="currentColor" />
             View Portfolio
@@ -99,7 +88,7 @@ export function Hero() {
         transition={{ delay: 2.2 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-white/20 text-[9px] tracking-[0.35em] uppercase">Scroll</span>
+        <span className="text-gray-400 text-[9px] tracking-[0.35em] uppercase">Scroll</span>
         <motion.div
           animate={{ y: [0, 9, 0] }}
           transition={{ repeat: Infinity, duration: 1.9, ease: "easeInOut" }}

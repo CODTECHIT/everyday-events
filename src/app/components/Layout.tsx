@@ -7,7 +7,7 @@ import { WhatsAppButton } from "@/app/components/WhatsAppButton";
 
 export function Layout() {
   return (
-    <div className="bg-[#0B0B0B] text-[#F5F5F5] overflow-x-hidden min-h-screen flex flex-col justify-between" style={{ fontFamily: "Inter, sans-serif" }}>
+    <div className="bg-white text-gray-800 overflow-x-hidden min-h-screen flex flex-col justify-between" style={{ fontFamily: "Inter, sans-serif" }}>
       <ScrollToTop />
       <CustomCursor />
       <Nav />

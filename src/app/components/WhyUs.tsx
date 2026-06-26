@@ -17,18 +17,17 @@ export function WhyUs() {
   ];
 
   return (
-    <section className="py-28 bg-[#0f0f0f]">
+    <section className="py-28 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <FadeUp className="relative">
-            <div className="relative h-[500px] overflow-hidden bg-[#171717]">
+            <div className="relative h-[500px] overflow-hidden bg-gray-100">
               <img
                 src={IMG.concert3}
                 alt="Everyday Event Solution large-scale production"
-                className="w-full h-full object-cover opacity-65"
+                className="w-full h-full object-cover opacity-100"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/20" />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-transparent" />
             </div>
             {/* Floating brand red badge */}
             <div className="absolute -bottom-5 -right-5 bg-[#E31C25] p-8 hidden lg:flex flex-col items-center justify-center shadow-[0_8px_40px_rgba(227,28,37,0.35)]">
@@ -43,7 +42,7 @@ export function WhyUs() {
           <FadeUp delay={0.15}>
             <SectionLabel>Why Choose Us</SectionLabel>
             <h2
-              className="font-bold text-white leading-[1.08] mb-10"
+              className="font-bold text-gray-900 leading-[1.08] mb-10"
               style={{ fontFamily: "Sora, sans-serif", fontSize: "clamp(1.8rem, 4vw, 3rem)" }}
             >
               {"India's Most Trusted"}
@@ -65,7 +64,7 @@ export function WhyUs() {
                   <div className="w-5 h-5 border border-[#E31C25]/40 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Check size={10} className="text-[#E31C25]" />
                   </div>
-                  <span className="text-white/60 text-sm leading-relaxed">{r}</span>
+                  <span className="text-gray-600 text-sm leading-relaxed">{r}</span>
                 </motion.div>
               ))}
             </div>

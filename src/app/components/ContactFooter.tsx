@@ -14,22 +14,26 @@ export function ContactSection() {
     setTimeout(() => setSent(false), 4000);
   };
 
+  const message = encodeURIComponent(
+    "Hi! I'm interested in your event management services. Could you please share more details?"
+  );
+
   const contactInfo = [
     { Icon: Phone,          label: "Call Us",   value: "+91 98765 43210",          href: "tel:+919876543210" },
-    { Icon: MessageSquare,  label: "WhatsApp",  value: "+91 98765 43210",          href: "https://wa.me/919876543210" },
+    { Icon: MessageSquare,  label: "WhatsApp",  value: "+91 98765 43210",          href: `https://wa.me/919876543210?text=${message}` },
     { Icon: Mail,           label: "Email",     value: "hello@everydayevent.in",   href: "mailto:hello@everydayevent.in" },
     { Icon: MapPin,         label: "Office",    value: "C-42, Sector 18, Noida, UP 201301", href: "#" },
   ];
 
   return (
-    <section id="contact" className="py-28 bg-[#171717]">
+    <section id="contact" className="py-28 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left */}
           <FadeUp>
             <SectionLabel>Get in Touch</SectionLabel>
             <h2
-              className="font-bold text-white leading-[1.08] mb-10"
+              className="font-bold text-gray-900 leading-[1.08] mb-10"
               style={{ fontFamily: "Sora, sans-serif", fontSize: "clamp(1.8rem, 4vw, 3rem)" }}
             >
               Tell Us About
@@ -45,12 +49,12 @@ export function ContactSection() {
                   rel="noopener noreferrer"
                   className="flex items-start gap-4 group"
                 >
-                  <div className="w-10 h-10 border border-white/10 group-hover:border-[#E31C25]/40 flex items-center justify-center flex-shrink-0 transition-colors duration-300 group-hover:bg-[#E31C25]/8">
-                    <Icon size={15} className="text-white/25 group-hover:text-[#E31C25] transition-colors duration-300" />
+                  <div className="w-10 h-10 border border-gray-300 group-hover:border-[#E31C25]/40 flex items-center justify-center flex-shrink-0 transition-colors duration-300 group-hover:bg-[#E31C25]/8">
+                    <Icon size={15} className="text-[#E31C25] transition-colors duration-300" />
                   </div>
                   <div>
-                    <div className="text-white/25 text-[9px] tracking-[0.3em] uppercase mb-1">{label}</div>
-                    <div className="text-white/65 text-sm group-hover:text-white/90 transition-colors duration-300">{value}</div>
+                    <div className="text-gray-600 text-[9px] tracking-[0.3em] uppercase mb-1">{label}</div>
+                    <div className="text-gray-700 text-sm group-hover:text-gray-900 transition-colors duration-300">{value}</div>
                   </div>
                 </a>
               ))}
@@ -59,13 +63,13 @@ export function ContactSection() {
 
           {/* Right — glassmorphism form */}
           <FadeUp delay={0.18}>
-            <div className="relative border border-white/8 p-8 bg-white/[0.03] backdrop-blur-xl">
+            <div className="relative border border-gray-200 p-8 bg-white shadow-sm">
               {/* Gold corner accents */}
               <div className="absolute top-0 left-0 w-8 h-8 border-t border-l border-[#E31C25]/40 pointer-events-none" />
               <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-[#E31C25]/40 pointer-events-none" />
 
               <h3
-                className="text-white font-bold text-lg mb-7"
+                className="text-gray-900 font-bold text-lg mb-7"
                 style={{ fontFamily: "Sora, sans-serif" }}
               >Request a Quote</h3>
 
@@ -81,8 +85,8 @@ export function ContactSection() {
                     <div className="w-14 h-14 bg-[#E31C25]/15 border border-[#E31C25]/40 flex items-center justify-center">
                       <Check size={24} className="text-[#E31C25]" />
                     </div>
-                    <p className="text-white font-semibold" style={{ fontFamily: "Sora, sans-serif" }}>Enquiry Sent!</p>
-                    <p className="text-white/45 text-sm">{"We'll"} be in touch within 2 business hours.</p>
+                    <p className="text-gray-900 font-semibold" style={{ fontFamily: "Sora, sans-serif" }}>Enquiry Sent!</p>
+                    <p className="text-gray-700 text-sm">{"We'll"} be in touch within 2 business hours.</p>
                   </motion.div>
                 ) : (
                   <motion.form
@@ -95,45 +99,45 @@ export function ContactSection() {
                   >
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="text-white/35 text-[9px] tracking-[0.3em] uppercase block mb-2">Full Name</label>
+                        <label className="text-gray-600 text-[9px] tracking-[0.3em] uppercase block mb-2">Full Name</label>
                         <input
                           type="text"
                           value={form.name}
                           onChange={e => setForm({ ...form, name: e.target.value })}
                           required
                           placeholder="Rajesh Kumar"
-                          className="w-full bg-white/5 border border-white/10 text-white text-sm px-4 py-3 focus:outline-none focus:border-[#E31C25]/40 transition-colors duration-300 placeholder-white/18"
+                          className="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm px-4 py-3 focus:outline-none focus:border-[#E31C25]/40 transition-colors duration-300 placeholder-gray-400"
                         />
                       </div>
                       <div>
-                        <label className="text-white/35 text-[9px] tracking-[0.3em] uppercase block mb-2">Phone</label>
+                        <label className="text-gray-600 text-[9px] tracking-[0.3em] uppercase block mb-2">Phone</label>
                         <input
                           type="tel"
                           value={form.phone}
                           onChange={e => setForm({ ...form, phone: e.target.value })}
                           required
                           placeholder="+91 98765 43210"
-                          className="w-full bg-white/5 border border-white/10 text-white text-sm px-4 py-3 focus:outline-none focus:border-[#E31C25]/40 transition-colors duration-300 placeholder-white/18"
+                          className="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm px-4 py-3 focus:outline-none focus:border-[#E31C25]/40 transition-colors duration-300 placeholder-gray-400"
                         />
                       </div>
                     </div>
                     <div>
-                      <label className="text-white/35 text-[9px] tracking-[0.3em] uppercase block mb-2">Email</label>
+                      <label className="text-gray-600 text-[9px] tracking-[0.3em] uppercase block mb-2">Email</label>
                       <input
                         type="email"
                         value={form.email}
                         onChange={e => setForm({ ...form, email: e.target.value })}
                         required
                         placeholder="rajesh@company.com"
-                        className="w-full bg-white/5 border border-white/10 text-white text-sm px-4 py-3 focus:outline-none focus:border-[#E31C25]/40 transition-colors duration-300 placeholder-white/18"
+                        className="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm px-4 py-3 focus:outline-none focus:border-[#E31C25]/40 transition-colors duration-300 placeholder-gray-400"
                       />
                     </div>
                     <div>
-                      <label className="text-white/35 text-[9px] tracking-[0.3em] uppercase block mb-2">Event Type</label>
+                      <label className="text-gray-600 text-[9px] tracking-[0.3em] uppercase block mb-2">Event Type</label>
                       <select
                         value={form.event}
                         onChange={e => setForm({ ...form, event: e.target.value })}
-                        className="w-full bg-[#0f0f0f] border border-white/10 text-white/65 text-sm px-4 py-3 focus:outline-none focus:border-[#E31C25]/40 transition-colors duration-300"
+                        className="w-full bg-white border border-gray-300 text-gray-700 text-sm px-4 py-3 focus:outline-none focus:border-[#E31C25]/40 transition-colors duration-300"
                       >
                         <option value="">Select event type</option>
                         <option>Wedding</option>
@@ -145,13 +149,13 @@ export function ContactSection() {
                       </select>
                     </div>
                     <div>
-                      <label className="text-white/35 text-[9px] tracking-[0.3em] uppercase block mb-2">Tell Us More</label>
+                      <label className="text-gray-600 text-[9px] tracking-[0.3em] uppercase block mb-2">Tell Us More</label>
                       <textarea
                         value={form.message}
                         onChange={e => setForm({ ...form, message: e.target.value })}
                         rows={4}
                         placeholder="Event date, venue, guest count, services needed..."
-                        className="w-full bg-white/5 border border-white/10 text-white text-sm px-4 py-3 focus:outline-none focus:border-[#E31C25]/40 transition-colors duration-300 placeholder-white/18 resize-none"
+                        className="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm px-4 py-3 focus:outline-none focus:border-[#E31C25]/40 transition-colors duration-300 placeholder-gray-400 resize-none"
                       />
                     </div>
                     <button

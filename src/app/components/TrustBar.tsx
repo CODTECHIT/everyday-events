@@ -40,9 +40,9 @@ export function TrustBar() {
   ];
 
   return (
-    <section className="bg-[#171717] border-y border-white/5 py-16">
+    <section className="bg-gray-50 border-y border-gray-200 py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 lg:divide-x lg:divide-white/8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 lg:divide-x lg:divide-gray-200">
           {stats.map(({ val, suf, label }, i) => (
             <FadeUp key={label} delay={i * 0.1} className="text-center lg:px-10">
               <div
@@ -51,7 +51,7 @@ export function TrustBar() {
               >
                 <CountUp end={val} suffix={suf} />
               </div>
-              <div className="text-white/40 text-[10px] tracking-[0.25em] uppercase">{label}</div>
+              <div className="text-gray-600 text-[10px] tracking-[0.25em] uppercase">{label}</div>
             </FadeUp>
           ))}
         </div>

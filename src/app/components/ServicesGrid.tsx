@@ -82,19 +82,19 @@ const servicesList = [
 
 export function ServicesGrid() {
   return (
-    <section id="services" className="py-28 bg-[#0f0f0f]">
+    <section id="services" className="py-28 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <FadeUp className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-14">
           <div>
             <SectionLabel>Our Expertise</SectionLabel>
             <h2
-              className="font-bold text-white leading-[1.08]"
+              className="font-bold text-gray-900 leading-[1.08]"
               style={{ fontFamily: "Sora, sans-serif", fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
             >
               Premium <span className="text-[#E31C25]">Services</span>
             </h2>
           </div>
-          <p className="text-white/45 text-sm max-w-xs leading-relaxed">
+          <p className="text-gray-700 text-sm max-w-xs leading-relaxed">
             From intimate 50-person gatherings to 50,000-seat festivals — we bring the same obsessive attention to every detail.
           </p>
         </FadeUp>
@@ -102,7 +102,7 @@ export function ServicesGrid() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {servicesList.map(({ icon: Icon, title, desc, img }, i) => (
             <FadeUp key={title} delay={i * 0.04}>
-              <div className="group bg-[#0B0B0B] border border-white/5 hover:border-[#E31C25]/30 rounded-lg overflow-hidden transition-all duration-500 h-full cursor-default flex flex-col">
+              <div className="group bg-white border border-gray-200 hover:border-[#E31C25]/30 rounded-lg overflow-hidden transition-all duration-500 h-full cursor-default flex flex-col shadow-sm hover:shadow-lg">
                 {/* Image Section */}
                 <div className="relative h-44 w-full overflow-hidden flex-shrink-0">
                   <img
@@ -110,22 +110,21 @@ export function ServicesGrid() {
                     alt={title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 </div>
 
                 {/* Content Section */}
                 <div className="p-6 pt-8 flex-grow flex flex-col justify-between relative">
                   {/* Floating Icon */}
-                  <div className="absolute -top-6 left-6 w-12 h-12 bg-[#0B0B0B] border border-white/10 group-hover:border-[#E31C25]/35 flex items-center justify-center transition-all duration-300 group-hover:bg-[#E31C25]/8 rounded shadow-[0_8px_30px_rgba(0,0,0,0.6)]">
-                    <Icon size={17} className="text-white/45 group-hover:text-[#E31C25] transition-colors duration-300" />
+                  <div className="absolute -top-6 left-6 w-12 h-12 bg-white border border-gray-200 group-hover:border-[#E31C25]/35 flex items-center justify-center transition-all duration-300 group-hover:bg-[#E31C25]/8 rounded shadow-md">
+                    <Icon size={17} className="text-[#E31C25] transition-colors duration-300" />
                   </div>
 
                   <div>
                     <h3
-                      className="text-white font-semibold text-sm mb-2.5"
+                      className="text-gray-900 font-semibold text-sm mb-2.5"
                       style={{ fontFamily: "Sora, sans-serif" }}
                     >{title}</h3>
-                    <p className="text-white/35 text-xs leading-relaxed group-hover:text-white/55 transition-colors duration-300">{desc}</p>
+                    <p className="text-gray-700 text-xs leading-relaxed group-hover:text-gray-900 transition-colors duration-300">{desc}</p>
                   </div>
                 </div>
               </div>
