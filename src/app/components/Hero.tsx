@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { ArrowRight, Play, ChevronDown } from "lucide-react";
 import { IMG } from "@/app/constants/images";
 import { Particles } from "@/app/components/Particles";
+import LightRays from "@/app/components/LightRays";
 
 export function Hero() {
   const [scrollY, setScrollY] = useState(0);
@@ -15,7 +16,21 @@ export function Hero() {
 
   return (
     <section className="relative h-screen min-h-[700px] flex items-center overflow-hidden bg-white">
-      {/* No background image */}
+      {/* Light Rays Background */}
+      <div className="absolute inset-0 z-0">
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#E31C25"
+          raysSpeed={0.8}
+          lightSpread={0.7}
+          rayLength={1.4}
+          followMouse={true}
+          mouseInfluence={0.08}
+          noiseAmount={0.02}
+          distortion={0.04}
+          className="opacity-90"
+        />
+      </div>
 
       {/* Red hairline */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#E31C25]/50 to-transparent" />
