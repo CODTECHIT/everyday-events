@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
 import { Phone, Menu, X } from "lucide-react";
+import logoImg from "@/assets/logo.jpg";
+
 
 export function Nav() {
   const [open, setOpen] = useState(false);
@@ -32,7 +34,7 @@ export function Nav() {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 group select-none">
           <img
-            src="/src/assets/logo.jpg"
+            src={logoImg}
             alt="Everyday Event Solutions Logo"
             className="w-20 h-20 object-contain rounded-full border border-[#E31C25]/30 group-hover:border-[#E31C25] transition-colors duration-300"
           />

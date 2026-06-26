@@ -1,4 +1,6 @@
 import { Instagram, Facebook, Twitter } from "lucide-react";
+import logoImg from "@/assets/logo.jpg";
+
 
 export function Footer() {
   const footerLinks = [
@@ -14,7 +16,7 @@ export function Footer() {
           <div className="col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-5">
               <img
-                src="/src/assets/logo.jpg"
+                src={logoImg}
                 alt="Everyday Event Solutions Logo"
                 className="w-16 h-16 object-contain rounded-full border border-[#E31C25]/20"
               />
